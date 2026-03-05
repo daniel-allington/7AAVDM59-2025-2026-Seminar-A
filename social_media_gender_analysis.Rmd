@@ -11,6 +11,24 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(readr)
 
+options(scipen = 999)
+
 d_bes2017 <- read_csv('../data/BES-2017-f2f-gender-fb-tw.csv')
 ```
+
+Hypothesis
+
+H1 Gender is associated with Facebook use
+
+```{r}
+chisq.test(
+  d_bes2017$Gender,
+  d_bes2017$Use_Facebook
+)
+
+```
+
+Findings
+
+Gender is associated with Facebook use, X2(df = 1, n = 2189) = 18.046, p < .001.
 
